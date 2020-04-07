@@ -8,6 +8,8 @@
                 {{data}}---<button @click="handleDel(index)">del</button>
             </li>
         </ul>
+        <div :style="styleObj" @click="handleStyleClickObj()">动态设置Style的需求--对象写法</div>
+        <div :style="styleArr" @click="handleStyleClickArr()">动态设置Style的需求--数组写法</div>
     </div>
 </template>
 <script>
@@ -17,10 +19,16 @@ export default {
         return{
             myText: null,
             dataList: [],
-            current: 0
+            current: 0,
+            styleObj: {
+                backgroundColor: "red"
+            }
         }
     },
     methods: {
+        handleStyleClickObj(){
+            // Vue.set(this.styleObj,"fontSize","30px");
+        },
         handleAdd(){
             if (this.myText != '' && this.myText != null) {
                 this.dataList.push(this.myText);

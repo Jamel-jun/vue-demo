@@ -3,7 +3,8 @@
     <!-- <img src="./assets/logo.png"> -->
     <!-- <HelloWorld/> -->
     <!-- <Demo01/> -->
-    <Demo02/>
+    <!-- <Demo02/> -->
+    <Demo03/>
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import HelloWorld from './components/HelloWorld'
 import Demo01 from './components/Demo01'
 import Demo02 from './components/Demo02'
+import Demo03 from './components/列表渲染'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Demo01,
-    Demo02
+    Demo02,
+    Demo03
   }
 }
 </script>
