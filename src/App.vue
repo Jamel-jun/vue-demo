@@ -5,7 +5,8 @@
     <!-- <Demo01/> -->
     <!-- <Demo02/> -->
     <!-- <Demo03/> -->
-    <Demo04/>
+    <!-- <Demo04/> -->
+    <Demo05/>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import Demo01 from './components/Demo01'
 import Demo02 from './components/Demo02'
 import Demo03 from './components/列表渲染'
 import Demo04 from './components/模糊查询'
+import Demo05 from './components/事件处理器'
 
 export default {
   name: 'App',
@@ -23,7 +25,8 @@ export default {
     Demo01,
     Demo02,
     Demo03,
-    Demo04
+    Demo04,
+    Demo05
   }
 }
 </script>
