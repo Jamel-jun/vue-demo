@@ -1,8 +1,12 @@
 <template>
     <div id="app">
+        <input type="checkbox" @change="handleChange" v-model="isAllChecked">
         <ul>
             <li v-for="data in dataList" :key="data.id">
-                <input type="checkbox" v-model="checkedGroup" :value="data" />{{data}}
+                <input type="checkbox" v-model="checkedGroup" :value="data" @change="handleItemChange" />{{data}}
+                <button @click="handleDelClick(data)">删除</button>
+                <input type="number" style="width:40px" v-model="data.number"/>
+                <button @click="data.number+data.number">增加</button>
             </li>
         </ul>
         总金额：{{getSum()}} 
@@ -14,6 +18,7 @@ export default {
     data(){
         return {
             checkedGroup: [],
+            isAllChecked: false,
             dataList: [
                 {
                     name: '商品1',
@@ -43,6 +48,26 @@ export default {
                 sum += data.price * data.number;
             }
             return sum;
+        },
+        handleDelClick(data){
+            if (data.number > 1) {
+                data.number--;
+            }
+        },
+        handleChange(ev){
+            // 如果为true 则是全选
+            if(this.isAllChecked){
+                this.checkedGroup = this.dataList;
+            } else {
+                this.checkedGroup = [];
+            }
+        },
+        handleItemChange(ev){
+            if(this.checkedGroup.length === this.dataList.length){
+                this.isAllChecked = true;
+            } else {
+                this.isAllChecked = false;
+            }
         }
     }
 }
